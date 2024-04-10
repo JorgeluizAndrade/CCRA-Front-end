@@ -9,7 +9,7 @@ body{
 section.ondas-box{
     position: relative;
     width: 100%;
-    height: 105vh;
+    height: 100vh;
 }
 .titulo{
     width: 100%;
@@ -61,7 +61,7 @@ section.ondas-box{
     background-position-x: 100px;
 }
 main{
-    padding: 100px;
+    padding: 20px 100px 200px 100px;
     background-color: white;
 }
 main h1{
@@ -70,4 +70,19 @@ main h1{
 }
 main p{
     font-size: 1.5em;
+    text-align: justify;
+}
+.inicio{
+    padding: 100px 0px 50px 0px;
+}
+.image{
+    background-image: url(../images/Imagem_FundoPrincipal.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    width: 100%;
+    height: 80vh;
+}
+.sobre{
+    padding: 100px 0px 0px 0px;
 }
