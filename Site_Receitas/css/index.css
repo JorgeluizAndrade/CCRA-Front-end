@@ -65,7 +65,11 @@ main{
     background-color: white;
 }
 main h1{
-    font-size: 3em;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+main h2{
+    font-size: 2em;
     margin-bottom: 20px;
 }
 main p{
@@ -75,8 +79,13 @@ main p{
 .inicio{
     padding: 100px 0px 50px 0px;
 }
+.sobre{
+    padding: 100px 0px 50px 0px;
+}
+.dificuldades{
+    padding: 100px 0px 0px 0px;
+}
 .image{
-    background-image: url(../images/Imagem_FundoPrincipal.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover ;
@@ -84,6 +93,27 @@ main p{
     border-radius: 1em;
     height: 80vh;
 }
-.sobre{
-    padding: 100px 0px 0px 0px;
+#img1{
+    background-image: url(../images/Foto_grupo.jpg);
+}
+#img2{
+    background-image: url(../images/fome.jpg);
+}
+#img3{
+    background-image: url(../images/reutilizar.png);
+}
+@media (max-width: 820px) {
+    .image{
+        height: 60vh;
+    }
+}
+@media (max-width: 700px){
+    .image{
+        height: 40vh;
+    }
+}
+@media (max-width: 490px){
+    .image{
+        height: 25vh;
+    }
 }
