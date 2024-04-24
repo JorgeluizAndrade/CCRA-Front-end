@@ -18,6 +18,4 @@ Aqui vamos botar a documentação do projeto. Explicação das tecnologias usada
     </li>
   </ul>
 
-  <h2>
-    Se você alguma sugestão de um Framework ou Biblioteca pode dar! Mas, por enquanto é essas 3.
-  </h2>
+  
