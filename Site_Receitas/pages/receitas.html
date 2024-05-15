@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalhes da Receita</title>
+</head>
+<body>
+  <h1>Detalhes da Receita</h1>
+  <div id="receita-details"></div>
+
+  <script>
+    // Obter o ID da receita da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const receitaId = urlParams.get('id');
+
+    // URL da API para obter as receitas
+    const apiUrl = "https://api-ccra.onrender.com/api/receitas";
+
+    // Buscar os detalhes da receita com base no ID
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const receita = data.find(item => item._id === receitaId);
+        
+        // Verificar se a receita foi encontrada e exibi-la
+        if (receita) {
+          let detalhesHTML = `<h2>${receita.nome}</h2><ul>`;
+          receita.ingredientes.forEach(ingrediente => {
+            detalhesHTML += `<li>${ingrediente}</li>`;
+          });
+          detalhesHTML += `</ul>`;
+          document.getElementById('receita-details').innerHTML = detalhesHTML;
+        } else {
+          document.getElementById('receita-details').innerText = "Detalhes da Receita não encontrados.";
+        }
+      })
+      .catch(error => {
+        console.error("Ocorreu um erro ao buscar os detalhes da receita:", error);
+        document.getElementById('receita-details').innerText = "Ocorreu um erro ao buscar os detalhes da receita.";
+      });
+  </script>
+</body>
+</html>
