@@ -51,14 +51,8 @@ function smoothScrollTo(endX, endY, duration) {
       clearInterval(timer);
     }
     window.scroll(newX, newY);
-  }, 1000 / 60);
+    if (time >= duration) {
+      clearInterval(timer);
+    }
+  }, 1000 / 60); // 60 fps
 }
-
-window.addEventListener("scroll", function () {
-  var rolagemPos = window.scrollY;
-
-  onda1.style.backgroundPositionX = 400 + rolagemPos * 4 + "px";
-  onda2.style.backgroundPositionX = 300 + rolagemPos * -4 + "px";
-  onda3.style.backgroundPositionX = 200 + rolagemPos * 2 + "px";
-  onda4.style.backgroundPositionX = 100 + rolagemPos * -2 + "px";
-});

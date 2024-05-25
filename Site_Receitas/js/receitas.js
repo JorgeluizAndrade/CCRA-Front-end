@@ -1,14 +1,3 @@
-const appDiv = document.querySelector("#receitas");
-const loader = document.querySelector(".loader");
-
-loader.style.display = "block";
-
-
-function abrirJanelaPorId(id) {
-  const novaGuia = window.open(`receitas.html?id=${id}`, '_blank');
-  novaGuia.focus();
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   const url = "https://api-ccra.onrender.com/api/receitas";
   const appDiv = document.querySelector("#receitas");
@@ -23,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       data.forEach((receita) => {
         cardHTML += `
-        <div class="card"  data-id="${receita.id}">
+        <div class="card"  data-id="${receita._id}">
             <h3 class="card__title">${receita.nome}</h3>
             <p class="card__content">Receita para você :)</p>
             <div class="card__date">Aproveite</div>
@@ -59,3 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
       loader.style.display = "none";
     });
 });
+
+function abrirJanelaPorId(id) {
+  const novaGuia = window.open(`receitas.html?id=${id}`, '_blank');
+  novaGuia.focus();
+}
