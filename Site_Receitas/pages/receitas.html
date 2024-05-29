@@ -4,6 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Detalhes da Receita</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f8f8;
+  }
+  #receita-details {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  ul li {
+    background: #e7f3fe;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .instrucoes {
+    margin-top: 20px;
+    background: #e7f3fe;
+    padding: 10px;
+    border-radius: 5px;
+  }
+</style>
 </head>
 <body>
   <h1>Detalhes da Receita</h1>
@@ -26,10 +61,12 @@
         // Verificar se a receita foi encontrada e exibi-la
         if (receita) {
           let detalhesHTML = `<h2>${receita.nome}</h2><ul>`;
+            detalhesHTML += `<img src="${receita.imagem}" alt="${receita.nome}">`;
           receita.ingredientes.forEach(ingrediente => {
             detalhesHTML += `<li>${ingrediente}</li>`;
           });
           detalhesHTML += `</ul>`;
+          detalhesHTML += `<div class="instrucoes"><h3>Instruções:</h3><p>${receita.instrucoes}</p></div>`; 
           document.getElementById('receita-details').innerHTML = detalhesHTML;
         } else {
           document.getElementById('receita-details').innerText = "Detalhes da Receita não encontrados.";
